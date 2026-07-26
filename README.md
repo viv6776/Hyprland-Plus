@@ -1,6 +1,6 @@
 <img width="1886" height="834" alt="logo" src="https://github.com/user-attachments/assets/f20ebe9b-fcdd-4131-be22-cedec82cee79" />
 
-# HYPRLAND+
+# Hyprland+
 
 ## Version: 1.0
 
@@ -8,25 +8,46 @@ A cleaner and improved Hyprland configuration focused on organization, smooth an
 
 Hyprland+ is a custom configuration built on top of Hyprland, keeping the power and customization of the original compositor while providing a more polished setup.
 
+---
+
 ## Current Features
 
 - ✨ Cleaned Hyprland Lua configuration
 - 🎨 Improved animation setup
 - ⌨️ Organized keybinds
+- 📊 Custom Hyprland+ Waybar configuration
+- 🧊 Clean and modern Waybar styling
 - 🧹 Removed unnecessary configuration clutter
 - ⚡ Smoother desktop experience
 
+---
+
 ## About
 
-Hyprland+ currently contains a custom Hyprland configuration.
+Hyprland+ is a custom Hyprland setup focused on simplicity, reliability, and clean customization.
 
-This project aims to improve the default configuration experience by making it easier to understand, modify, and use.
+The project currently includes:
 
-More features may be added in future versions.
+- A custom Hyprland configuration
+- A polished Waybar setup
+- Organized desktop components
 
-## Installation
+The goal of Hyprland+ is to provide a better starting point for users who want a good-looking, easy-to-understand, and customizable Hyprland environment.
 
-Backup your current config:
+More features will be added in future versions.
 
-```bash
-cp ~/.config/hypr/hyprland.lua ~/.config/hypr/hyprland.lua.backup
+---
+
+## Waybar
+
+Hyprland+ includes a custom Waybar configuration designed to match the overall experience.
+
+Features:
+
+- Clean module layout
+- Rounded modern styling
+- Transparent/glass appearance
+- Easy customization
+- Designed to work well with Hyprland
+
+Waybar files:
