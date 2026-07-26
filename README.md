@@ -1,3 +1,5 @@
+<img width="1886" height="834" alt="logo" src="https://github.com/user-attachments/assets/f20ebe9b-fcdd-4131-be22-cedec82cee79" />
+
 # HYPRLAND+
 
 ## Version: 1.0
