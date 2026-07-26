@@ -1,0 +1,230 @@
+/*
+ * Hyprland+ Waybar Style
+ * Clean • Minimal • Modern
+ */
+
+@define-color bg          rgba(20, 20, 25, 0.85);
+@define-color bg-solid    #14141a;
+@define-color bg-pill     rgba(255, 255, 255, 0.08);
+@define-color bg-hover    rgba(255, 255, 255, 0.15);
+@define-color bg-active   rgba(255, 255, 255, 0.10);
+
+@define-color fg          #eceff4;
+@define-color fg-dim      #d8dee9;
+
+@define-color accent      #5e81ac;
+@define-color accent-alt  #88c0d0;
+@define-color warn        #ebcb8b;
+@define-color danger      #bf616a;
+@define-color good        #a3be8c;
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 12px;
+    min-height: 0;
+    transition: all 0.2s ease;
+}
+
+/* Main bar */
+window#waybar {
+    background: @bg;
+    color: @fg;
+    border-radius: 14px;
+}
+
+window#waybar.hidden {
+    opacity: 0;
+}
+
+/* Workspaces */
+#workspaces {
+margin-left: 8px;
+background: @bg-pill;
+padding: 2px 4px;
+}
+
+#workspaces button {
+padding: 0 12px;
+margin: 4px 2px;
+color: @fg-dim;
+background: transparent;
+}
+
+#workspaces button:hover {
+background: @bg-hover;
+}
+
+#workspaces button.active {
+background: @accent;
+color: @fg;
+}
+
+#workspaces button.urgent {
+background: @danger;
+color: @fg;
+}
+
+#workspaces button.empty {
+color: rgba(216, 222, 233, 0.35);
+}
+
+/* Center window title */
+#window {
+padding: 0 15px;
+color: @fg;
+}
+
+/* Shared pill style for right-side modules */
+#clock,
+#idle_inhibitor,
+#network,
+#bluetooth,
+#pulseaudio,
+#backlight,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#tray,
+#custom-power {
+padding: 0 14px;
+margin: 4px 3px;
+background: @bg-pill;
+color: @fg;
+}
+
+#clock:hover,
+#idle_inhibitor:hover,
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#tray:hover,
+#custom-power:hover {
+background: @bg-hover;
+}
+
+/* Clock gets a subtle accent to anchor the bar */
+#clock {
+color: @accent-alt;
+font-weight: 600;
+}
+
+/* Idle inhibitor */
+#idle_inhibitor.activated {
+color: @accent-alt;
+background: @bg-active;
+}
+
+/* Audio */
+#pulseaudio.muted {
+color: @danger;
+}
+
+/* Network */
+#network.disconnected {
+color: @danger;
+}
+
+#network.disconnected::before {
+color: @danger;
+}
+
+/* Bluetooth */
+#bluetooth.disabled {
+color: rgba(236, 239, 244, 0.35);
+}
+
+/* Backlight */
+#backlight {
+color: @warn;
+}
+
+/* CPU / memory — flag high usage without needing a glance at numbers */
+#cpu.warning,
+#memory.warning {
+color: @warn;
+}
+
+#cpu.critical,
+#memory.critical {
+color: @danger;
+background: rgba(191, 97, 106, 0.15);
+}
+
+/* Temperature */
+#temperature.critical {
+color: @danger;
+}
+
+/* Battery */
+#battery {
+color: @good;
+}
+
+#battery.charging {
+color: @accent-alt;
+}
+
+#battery.warning:not(.charging) {
+color: @warn;
+}
+
+#battery.critical:not(.charging) {
+color: @danger;
+background: rgba(191, 97, 106, 0.15);
+}
+
+@keyframes battery-blink {
+    to {
+        background: @danger;
+        color: @bg-solid;
+    }
+}
+
+#battery.critical:not(.charging) {
+animation-name: battery-blink;
+animation-duration: 1.5s;
+animation-timing-function: steps(2);
+animation-iteration-count: infinite;
+}
+
+/* System tray */
+#tray > .passive {
+opacity: 0.6;
+}
+
+#tray > .needs-attention {
+background: @danger;
+}
+
+/* Power button, styled to stand out slightly from the rest of the group */
+#custom-power {
+margin-right: 8px;
+color: @danger;
+font-weight: 700;
+}
+
+#custom-power:hover {
+background: @danger;
+color: @fg;
+}
+
+/* Tooltip */
+tooltip {
+    background: rgba(20, 20, 25, 0.95);
+    color: @fg;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+tooltip label {
+    color: @fg;
+}
